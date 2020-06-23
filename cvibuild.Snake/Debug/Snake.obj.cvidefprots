@@ -1,0 +1,40 @@
+[main]
+Class="Function"
+Prototype="int main(int argc, char *argv[]);"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:10:1"
+
+[QuitCallback]
+Class="Function"
+Prototype="int QuitCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:25:1"
+
+[OkCallback]
+Class="Function"
+Prototype="int OkCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:38:1"
+
+[StartCallback]
+Class="Function"
+Prototype="int StartCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:50:1"
+
+[timer]
+Class="Function"
+Prototype="int timer(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:85:1"
+
+[difficulty]
+Class="Function"
+Prototype="int difficulty(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:109:1"
+
+[score]
+Class="Function"
+Prototype="int score(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:121:1"
+
+[clearcnvas]
+Class="Function"
+Prototype="void clearcnvas();"
+SourceLocation="c:\Users\קובי שמיר\Desktop\CVI\Finel_Project\Snake.c:135:1"
+
