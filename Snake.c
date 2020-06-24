@@ -6,10 +6,11 @@
 static int panelHandle;
 int tabhandle0, tabhandle1, clk = 0,H,W,apple;
 int movex=25,movey=25; // size of movment for the snake: movex is for X, and movey is for the Y
-//void DrawApple(Rect rect);
+
+void DrawApple(Rect rect);
 void DrawSnake(); //makeing squre in the middle
 void clearcnvas();
-static void move_snake();
+//static void move_snake();
 
 
 
@@ -216,12 +217,11 @@ static void move_ball(){
 */
 
 
+////////next function must be uncomment to make it work
+// controlling the snake with arrows
 
-// controlling the snake with arrows:
-/*
 int CVICALLBACK Snakefunc (int panel, int control, int event,
 						   void *callbackData, int eventData1, int eventData2)
 {
 	return 0;
 }
-*/
