@@ -1,1 +1,1 @@
--force-include-file "Snake.c";"c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c" -force-include-file "Snake.h";"c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.h" 
+-force-include-file "Snake.c";"c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c" -force-include-file "Snake.h";"c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.h" 

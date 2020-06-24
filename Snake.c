@@ -5,10 +5,11 @@
 
 static int panelHandle;
 int tabhandle0, tabhandle1, clk = 0,H,W,apple;
-
-void DrawSnake(Rect rect);
-
+int movex=25,movey=25; // size of movment for the snake: movex is for X, and movey is for the Y
+//void DrawApple(Rect rect);
+void DrawSnake(); //makeing squre in the middle
 void clearcnvas();
+static void move_snake();
 
 
 
@@ -75,6 +76,7 @@ int CVICALLBACK StartCallback (int panel, int control, int event,
 				SetCtrlAttribute (tabhandle0, GAMEPANEL_TIMER, ATTR_INTERVAL, selection);
 				SetCtrlAttribute (tabhandle0, GAMEPANEL_TIMER, ATTR_ENABLED, clk);
 				clearcnvas();
+				DrawSnake(W,H);
 			}
 				
 		
@@ -183,7 +185,9 @@ static void random_apple(){
 }
 */
 
-void DrawSnake(Rect rect){
+// func to make apple: equivalent to Ran's DrawWhiteRect:
+/*
+void DrawApple(Rect rect){
 	
 SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_DRAW_POLICY, VAL_MARK_FOR_UPDATE);
 SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_PEN_COLOR, VAL_BLACK);	
@@ -191,11 +195,33 @@ SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_PEN_FILL_COLOR, VAL_BLACK);
 CanvasDrawRect(tabhandle0, GAMEPANEL_CANVAS, rect, VAL_DRAW_FRAME_AND_INTERIOR);
 
 }
+*/
+
+// func to make a squre represent the snake: equivalent to Ran's DrawRightUser:
+void DrawSnake (int X, int Y) {
+	SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_DRAW_POLICY, VAL_MARK_FOR_UPDATE);
+	SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_PEN_COLOR, VAL_BLACK);
+	SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_PEN_FILL_COLOR, VAL_BLACK);	
+	CanvasDrawRect(tabhandle0, GAMEPANEL_CANVAS, MakeRect(Y/2-10 ,X/2-10 ,25 ,25 ), VAL_DRAW_FRAME_AND_INTERIOR);
+	CanvasUpdate(tabhandle0,GAMEPANEL_CANVAS,VAL_ENTIRE_OBJECT);
+}
+
+// func to make the snake move to direction controlled by arrows, starting moving right: equivalent to Ran's move_ball:
+/*
+static void move_ball(){
+	
+	
+}
+
+*/
 
 
-/// conttrolling the snake:
+
+// controlling the snake with arrows:
+/*
 int CVICALLBACK Snakefunc (int panel, int control, int event,
 						   void *callbackData, int eventData1, int eventData2)
 {
 	return 0;
 }
+*/

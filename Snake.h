@@ -19,7 +19,7 @@
 #define  PANEL_OKBUTTON                   4       /* control type: command, callback function: OkCallback */
 
      /* tab page panel controls */
-#define  GAMEPANEL_CANVAS                 2       /* control type: canvas, callback function: (none) */
+#define  GAMEPANEL_CANVAS                 2       /* control type: canvas, callback function: Snakefunc */
 #define  GAMEPANEL_StartBUTTON            3       /* control type: command, callback function: StartCallback */
 #define  GAMEPANEL_NUMERIC                4       /* control type: numeric, callback function: score */
 #define  GAMEPANEL_BINARYSWITCH           5       /* control type: binary, callback function: difficulty */
@@ -49,6 +49,7 @@ int  CVICALLBACK difficulty(int panel, int control, int event, void *callbackDat
 int  CVICALLBACK OkCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK QuitCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK score(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK Snakefunc(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK StartCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK timer(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 
