@@ -5,12 +5,13 @@
 
 static int panelHandle;
 int tabhandle0, tabhandle1, clk = 0,H,W,apple;
-int movex=25,movey=25; // size of movment for the snake: movex is for X, and movey is for the Y
+int snake_x=25,snake_y=25,dx=10,dy=10; // size of movment for the snake: snake_x is for X, and snake_y is for the Y, dx for movment step
+double selection;
 
 void DrawApple(Rect rect);
-void DrawSnake(); //makeing squre in the middle
-void clearcnvas();
-//static void move_snake();
+void DrawSnake(int x, int y); //makeing squre in the middle
+void clearcanvas();
+static void move_snake();
 
 
 
@@ -76,23 +77,61 @@ int CVICALLBACK StartCallback (int panel, int control, int event,
 				GetCtrlVal (tabhandle0, GAMEPANEL_BINARYSWITCH, &selection);
 				SetCtrlAttribute (tabhandle0, GAMEPANEL_TIMER, ATTR_INTERVAL, selection);
 				SetCtrlAttribute (tabhandle0, GAMEPANEL_TIMER, ATTR_ENABLED, clk);
-				clearcnvas();
+				clearcanvas();
+				snake_x = W/2;
+				snake_y = H/2;
 				DrawSnake(W,H);
 			}
 				
-		
 			//CanvasClear (tabhandle0, GAMEPANEL_CANVAS, VAL_ENTIRE_OBJECT);
-			
 			break;
 	}
 	return 0;
 }
+
+//next function must be uncomment to make it work
+///////////// controlling the snake with arrows
+int CVICALLBACK Snakefunc (int panel, int control, int event,
+						   void *callbackData, int eventData1, int eventData2)
+{
+	switch(event)
+	{
+		case EVENT_KEYPRESS:
+		{
+			switch(eventData1)
+			{
+				case VAL_UP_ARROW_VKEY:
+				{
+					CmtScheduleThreadPoolFunction (threadhandle, threadfunction3, NULL, &val1); // coppied from RAN
+				}
+				
+				case VAL_DOWN_ARROW_VKEY:
+				{
+					CmtScheduleThreadPoolFunction (threadhandle, threadfunction4, NULL, &val1);// coppied from RAN
+				}
+					
+			}
+			
+		}
+		
+		
+	}
+	
+	
+}
+	
+	
+	
+	return 0;
+}
+
 /*
 VAL_UP_ARROW_VKEY = 0x0600
 VAL_DOWN_ARROW_VKEY = 0x0700
 VAL_LEFT_ARROW_VKEY = 0x0800
 VAL_RIGHT_ARROW_VKEY = 0x0900
 */
+
 int CVICALLBACK timer (int panel, int control, int event,
 					   void *callbackData, int eventData1, int eventData2)
 {
@@ -113,10 +152,7 @@ int CVICALLBACK timer (int panel, int control, int event,
 	return 0;	
 }
 
-
-
 //// no need to write anything to that function now:
-
 int CVICALLBACK difficulty (int panel, int control, int event,
 							void *callbackData, int eventData1, int eventData2)
 {
@@ -128,7 +164,6 @@ int CVICALLBACK difficulty (int panel, int control, int event,
 	}
 	return 0;
 }
-
 int CVICALLBACK score (int panel, int control, int event,
 					   void *callbackData, int eventData1, int eventData2)
 {
@@ -143,7 +178,7 @@ int CVICALLBACK score (int panel, int control, int event,
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void clearcnvas() {
+void clearcanvas() {
 	
 	/// Draw canvas:
 	SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_DRAW_POLICY, VAL_MARK_FOR_UPDATE);
@@ -208,20 +243,35 @@ void DrawSnake (int X, int Y) {
 }
 
 // func to make the snake move to direction controlled by arrows, starting moving right: equivalent to Ran's move_ball:
-/*
+
 static void move_ball(){
 	
+	  snake_x += dx;
+	  snake_y += dy;
+	  if (snake_x <= 0)
+	  {
+		 // score[1]+=1; //right
+		//  sprintf(str2, "%d", score[1]);   
+		  snake_x = W/2;
+		  snake_y = H/2;
+		  dy = 10*selection;
+		  clearcanvas(); 
+		  DrawSnake(snake_x, snake_y);
+	  }
+	  if (snake_x >= W)
+	  {
+		  //score[0]+=1; //left
+		//  sprintf(str1, "%d", score[0]);
+		  snake_x = W/2;
+		  snake_y = H/2;
+		  clearcanvas();
+		  dy = 10*selection;
+		  DrawSnake(snake_x, snake_y);
+	  }
+	   if (snake_y <=5 || snake_y >= H-5)
+	   {
+		  dy=-dy;
+	   }
 	
 }
 
-*/
-
-
-////////next function must be uncomment to make it work
-// controlling the snake with arrows
-
-int CVICALLBACK Snakefunc (int panel, int control, int event,
-						   void *callbackData, int eventData1, int eventData2)
-{
-	return 0;
-}
