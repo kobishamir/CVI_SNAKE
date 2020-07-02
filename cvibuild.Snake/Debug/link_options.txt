@@ -1,19 +1,19 @@
 -nologo
--out:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\Snake.exe
+-out:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\Snake.exe
 -arch:x86
 -timestamp
 -debug:2
--project:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.prj
--res:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\resources.res
+-project:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.prj
+-res:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\resources.res
 -entry:_CVIWinMainStartupCodeForDebugging@0
 -base:0x400000
--linked:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\linkersummary.txt
--dlldeps:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\dlldependencies.txt
--licensing:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\linkerlicensing.txt
--browsedeps:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\moduledependencies.txt
+-linked:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\linkersummary.txt
+-dlldeps:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\dlldependencies.txt
+-licensing:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\linkerlicensing.txt
+-browsedeps:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\moduledependencies.txt
 -stackreserve:1048576
 -stackcommit:4096
--in:c:\Users\kobis\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\Snake.obj
+-in:c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\cvibuild.Snake\Debug\Snake.obj
 -more:c:\program files (x86)\national instruments\cvi2019\bin\msvc\cvistart.lib
 -more:c:\program files (x86)\national instruments\cvi2019\bin\msvc\cvi.lib
 -more:c:\Program Files (x86)\National Instruments\CVI2019\bin\msvc\advanlys.lib

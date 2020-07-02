@@ -27,12 +27,18 @@ HDRS = 	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\activ
 	"c:\\Program Files (x86)\\National Instruments\\CVI2019\\bin"
 	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
 	;
-LOCATE on "Snake.c" = "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE" ;
-LOCATE on "Snake.h" = "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE" ;
-Object "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" : "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\Snake.c" ;
-FILENUM on "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" = 1 ;
-DEFPROTS on "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" = "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj.cvidefprots" ;
-OUTFILE on "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" = "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj.out" ;
-PrjObjects += "c:\\Users\\kobis\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" ;
-Always $(PrjObjects) ;
-Depends all : $(PrjObjects) ;
+include Jamfile_instr ;
+TIMESTAMPFILE on "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\Snake.c" = "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\UnsavedChanges\\Snake.c" ;
+LOCATE on "Snake.c" = "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE" ;
+LOCATE on "Snake.h" = "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE" ;
+Object "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" : "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\Snake.c" ;
+FILENUM on "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" = 1 ;
+DEFPROTS on "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" = "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj.cvidefprots" ;
+OUTFILE on "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" = "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj.out" ;
+PrjObjects += "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.obj" ;
+Object "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\resources.res" : "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\resources.in.rc" ;
+Depends "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\resources.res" : "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\manifest.xml" ;
+MainFromObjects "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.exe" : "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\link_options.txt" ;
+Depends "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.exe" : "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\resources.res" ;
+Depends all : "c:\\Users\\קובי שמיר\\Documents\\GitHub\\CVI_SNAKE\\cvibuild.Snake\\Debug\\Snake.exe" ;

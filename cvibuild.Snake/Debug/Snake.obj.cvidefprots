@@ -1,50 +1,55 @@
 [main]
 Class="Function"
 Prototype="int main(int argc, char *argv[]);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:20:1"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:22:1"
 
 [QuitCallback]
 Class="Function"
 Prototype="int QuitCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:35:1"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:37:1"
 
 [OkCallback]
 Class="Function"
 Prototype="int OkCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:48:1"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:50:1"
 
 [StartCallback]
 Class="Function"
 Prototype="int StartCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:60:1"
-
-[timer]
-Class="Function"
-Prototype="int timer(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:98:1"
-
-[difficulty]
-Class="Function"
-Prototype="int difficulty(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:119:1"
-
-[score]
-Class="Function"
-Prototype="int score(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:130:1"
-
-[clearcanvas]
-Class="Function"
-Prototype="void clearcanvas();"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:144:1"
-
-[DrawSnake]
-Class="Function"
-Prototype="void DrawSnake(int X, int Y);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:200:1"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:62:1"
 
 [Snakefunc]
 Class="Function"
 Prototype="int Snakefunc(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\kobis\Documents\GitHub\CVI_SNAKE\Snake.c:246:1"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:98:1"
+
+[timer]
+Class="Function"
+Prototype="int timer(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:137:1"
+
+[difficulty]
+Class="Function"
+Prototype="int difficulty(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:158:1"
+
+[score]
+Class="Function"
+Prototype="int score(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:169:1"
+
+[clearcanvas]
+Class="Function"
+Prototype="void clearcanvas();"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:183:1"
+
+[DrawSnake]
+Class="Function"
+Prototype="void DrawSnake(int X, int Y);"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:238:1"
+
+[snakethread]
+Class="Function"
+Prototype="int snakethread(void *callbackData);"
+SourceLocation="c:\Users\קובי שמיר\Documents\GitHub\CVI_SNAKE\Snake.c:280:1"
 
