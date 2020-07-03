@@ -5,15 +5,17 @@
 
 static int panelHandle;
 int tabhandle0, tabhandle1, clk = 0,H,W,apple;
-int snake_x=25,snake_y=25,dx=10,dy=10; // size of movment for the snake: snake_x is for X, and snake_y is for the Y, dx for movment step
+int snake_x,snake_y,dx=10,dy=10; // size of movment for the snake: snake_x is for X, and snake_y is for the Y, dx for movment step
 double selection;
 
 void DrawApple(Rect rect);
 void DrawSnake(int x, int y); //makeing squre in the middle
 void clearcanvas();
 static void move_snake();
+CmtThreadLockHandle lockhandle; // locking movement i think
 
 
+int CVICALLBACK snakethread (void *callbackData);
 
 
 /////////// Main Function
@@ -80,7 +82,8 @@ int CVICALLBACK StartCallback (int panel, int control, int event,
 				clearcanvas();
 				snake_x = W/2;
 				snake_y = H/2;
-				DrawSnake(W,H);
+				DrawSnake(snake_x,snake_y);
+				CmtNewLock(NULL,OPT_TL_SUPPORT_TIMEOUT, &lockhandle);
 			}
 				
 			//CanvasClear (tabhandle0, GAMEPANEL_CANVAS, VAL_ENTIRE_OBJECT);
@@ -88,6 +91,7 @@ int CVICALLBACK StartCallback (int panel, int control, int event,
 	}
 	return 0;
 }
+
 
 //next function must be uncomment to make it work
 ///////////// controlling the snake with arrows
@@ -102,12 +106,12 @@ int CVICALLBACK Snakefunc (int panel, int control, int event,
 			{
 				case VAL_UP_ARROW_VKEY:
 				{
-					CmtScheduleThreadPoolFunction (threadhandle, threadfunction3, NULL, &val1); // coppied from RAN
+					//CmtScheduleThreadPoolFunction (threadhandle, threadfunction3, NULL, &val1); // coppied from RAN
 				}
 				
 				case VAL_DOWN_ARROW_VKEY:
 				{
-					CmtScheduleThreadPoolFunction (threadhandle, threadfunction4, NULL, &val1);// coppied from RAN
+				//	CmtScheduleThreadPoolFunction (threadhandle, threadfunction4, NULL, &val1);// coppied from RAN
 				}
 					
 			}
@@ -118,12 +122,10 @@ int CVICALLBACK Snakefunc (int panel, int control, int event,
 	}
 	
 	
-}
-	
-	
 	
 	return 0;
 }
+
 
 /*
 VAL_UP_ARROW_VKEY = 0x0600
@@ -229,7 +231,6 @@ SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_DRAW_POLICY, VAL_MARK_FOR_U
 SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_PEN_COLOR, VAL_BLACK);	
 SetCtrlAttribute (tabhandle0, GAMEPANEL_CANVAS, ATTR_PEN_FILL_COLOR, VAL_BLACK);
 CanvasDrawRect(tabhandle0, GAMEPANEL_CANVAS, rect, VAL_DRAW_FRAME_AND_INTERIOR);
-
 }
 */
 
@@ -244,7 +245,7 @@ void DrawSnake (int X, int Y) {
 
 // func to make the snake move to direction controlled by arrows, starting moving right: equivalent to Ran's move_ball:
 
-static void move_ball(){
+static void move_snake(){
 	
 	  snake_x += dx;
 	  snake_y += dy;
@@ -275,3 +276,11 @@ static void move_ball(){
 	
 }
 
+
+int CVICALLBACK snakethread (void *callbackData) {
+	
+	CmtGetLock(lockhandle);
+	move_snake();
+	CmtReleaseLock(lockhandle);
+	return 0;
+}
